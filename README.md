@@ -47,13 +47,15 @@ A lightweight Python tool to automatically monitor and track the real-time stock
 
 ## Project Structure
 
-your_project_folder/ 
-    ├── config.py # Configuration file (prodIds and interval) 
-    ├── monitor.py # Main program logic 
-    ├── monitor_log.txt # Auto-generated log file 
-    ├── [prodId folders]/ # Auto-generated folders for each product ID │ 
-        ├── [MemberName].csv 
-            │ └── ...
+
+```text
+your_project_folder/
+├── config.py           # Configuration file (prodIds and interval)
+├── monitor.py          # Main program logic
+├── monitor_log.txt     # Auto-generated log file
+├── [prodId folders]/   # Auto-generated folders for each product ID
+│   ├── [MemberName].csv
+│   └── ...
 
 
 Each member will have a dedicated CSV file under their corresponding product ID folder.
@@ -69,21 +71,25 @@ Each member will have a dedicated CSV file under their corresponding product ID 
    cd KMStation-stock-tracking
 
 2. **Install dependencies**
+    ```bash
     pip install requests
 
 3. **Edit the configuration**
+    ```text
     Open config.py and modify:
     prod_ids = [3712, 3713]  # Replace with the prodIds you want to track
     interval_seconds = 300   # Adjust the interval (in seconds) as needed
 
 4. **Run the tracker in the terminal**
+    ```bash
     python monitor.py
 
 ---
 
 ## Output Files
 
-1. CSV Files
+1. **CSV Files**
+    ```text
 Each CSV file includes:
 
 Time of record
@@ -102,7 +108,8 @@ Example CSV Record:
 Time,                    TotalMonthSales,    TotalSoldNum,   MemberName, TotalStocks,    UnitSales
 2025-04-21 19:40:00,     225,                225,            MARK,       99992,          20
 
-2. Log File
+2. **Log File**
+    ```text
 monitor_log.txt records each successful update and any errors for future review.
 
 ---
